@@ -6,14 +6,18 @@ import { RouterOutlet } from '@angular/router';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HeaderComponent } from './layout/header/header.component';
-import { CategoryComponent } from './layout/header/category/category.component';
+import { ProfileBoardComponent } from './bulletin-board/profile-board/profile-board.component';
+import { UserMenuComponent } from './layout/header/components/user-menu/user-menu.component';
+import { SearchPanelComponent } from './layout/header/components/search-panel/search-panel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     HeaderComponent,
-    CategoryComponent,
+    ProfileBoardComponent,
+    UserMenuComponent,
+    SearchPanelComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, RouterOutlet],
   providers: [],
