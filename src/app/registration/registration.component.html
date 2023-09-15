@@ -1,6 +1,6 @@
-<div class="authorisation-form">
-  <div class="authorisation-header">
-    <p>Авторизация</p>
+<div class="registration-form">
+  <div class="registration-header">
+    <p>Регистрация</p>
     <svg
       width="24"
       height="24"
@@ -14,24 +14,12 @@
       />
     </svg>
   </div>
-  <form action="" class="authorisation-main">
+  <form action="" class="registration-main">
     <input type="text" class="phone-number" placeholder="Номер телефона" />
+    <input type="text" class="name" placeholder="Имя" />
     <input type="text" class="password" placeholder="Пароль" />
-    <div class="auth-remember">
-      <div class="rememberMe">
-        <input type="checkbox" name="rememberMe" id="rememberMe" />
-        <label for="rememberMe" class="rememberMe-text">Запомнить меня</label>
-      </div>
-      <a href="#" class="forget-pass">Забыли пароль?</a>
-    </div>
     <div class="btn-container">
-      <button class="btn login-btn">Войти</button>
+      <button class="btn login-btn">Зарегистрироваться</button>
     </div>
   </form>
-  <div class="registration">
-    <p class="registration__title">Нет аккаунта?</p>
-    <a class="registration__link" routerLink="../registration"
-      >Зарегистрироваться</a
-    >
-  </div>
 </div>
