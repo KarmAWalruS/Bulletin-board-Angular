@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { Daum } from './interfaces/main-board.interface';
-import { BulletinsService } from './services/bulletins.service';
 
 @Component({
   selector: 'app-root',

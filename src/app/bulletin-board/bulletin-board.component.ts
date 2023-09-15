@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Daum } from '../interfaces/main-board.interface';
+import { Daum } from './main-board/main-board.interface';
 import { BulletinsService } from '../services/bulletins.service';
 
 @Component({

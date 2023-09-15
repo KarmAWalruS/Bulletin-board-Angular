@@ -2,18 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdvertisementComponent } from './advertisement.component';
 import { AdvertisementCardComponent } from './advertisement-card/advertisement-card.component';
-import { NewOrChangeCardComponent } from './new-or-change-card/new-or-change-card.component';
-
-
+import { AdvertisementRoutingModule } from './advertisement.routing.module';
 
 @NgModule({
-  declarations: [
-    AdvertisementComponent,
-    AdvertisementCardComponent,
-    NewOrChangeCardComponent
-  ],
-  imports: [
-    CommonModule
-  ]
+  declarations: [AdvertisementComponent, AdvertisementCardComponent],
+  imports: [CommonModule, AdvertisementRoutingModule],
+  exports: [AdvertisementCardComponent],
 })
-export class AdvertisementModule { }
+export class AdvertisementModule {}

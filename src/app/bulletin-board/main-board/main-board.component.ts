@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Daum } from 'src/app/interfaces/main-board.interface';
+import { Daum } from 'src/app/bulletin-board/main-board/main-board.interface';
 
 @Component({
   selector: 'app-main-board',

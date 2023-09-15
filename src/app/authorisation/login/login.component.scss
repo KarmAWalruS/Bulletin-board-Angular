@@ -1,72 +1,97 @@
 .authorisation-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  max-width: 416px;
+  padding: 24px 36px;
+  border-radius: 8px;
+  box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.04),
+    0px 20px 25px -5px rgba(0, 0, 0, 0.1);
+  .authorisation-header {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    max-width: 416px;
-    padding: 24px 36px;
-    border-radius: 8px;
-    box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.04),
-      0px 20px 25px -5px rgba(0, 0, 0, 0.1);
-    .authorisation-header {
+    justify-content: space-between;
+    width: 100%;
+    p {
+      font-family: Inter, sans-serif;
+      font-size: 24px;
+      font-style: normal;
+      line-height: 32px;
+      color: #1e293b;
+    }
+  }
+  .authorisation-main {
+    display: grid;
+    margin-top: 24px;
+    .phone-number {
+      width: 344px;
+      padding: 12px;
+      border-radius: 4px;
+      border: 1px solid #cbd5e1;
+    }
+    .password {
+      margin-top: 16px;
+      padding: 12px;
+      border-radius: 4px;
+      border: 1px solid #cbd5e1;
+    }
+    .auth-remember {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 100%;
-      p {
-        font-family: Inter, sans-serif;
-        font-size: 24px;
-        font-style: normal;
-        line-height: 32px;
-        color: #1e293b;
-      }
-    }
-    .authorisation-main {
-      display: grid;
-      margin-top: 24px;
-      .phone-number {
-        width: 344px;
-        padding: 12px;
-        border-radius: 4px;
-        border: 1px solid #cbd5e1;
-      }
-      .password {
-        margin-top: 16px;
-        padding: 12px;
-        border-radius: 4px;
-        border: 1px solid #cbd5e1;
-      }
-      .auth-remember {
+      margin-top: 8px;
+      .rememberMe {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        margin-top: 8px;
-        .rememberMe {
-          display: flex;
-          align-items: center;
-          .rememberMe-text {
-            font-family: Inter, sans-serif;
-            font-size: 12px;
-            font-style: normal;
-            line-height: 24px;
-          }
-        }
-        .forget-pass {
+        .rememberMe-text {
           font-family: Inter, sans-serif;
           font-size: 12px;
           font-style: normal;
           line-height: 24px;
         }
-        .forget-pass:visited {
-          color: #3b82f6;
-        }
       }
-      .btn-container {
-        display: flex;
-        justify-content: center;
-        .login-btn {
-          padding: 12px 40px;
-          margin-top: 24px;
-        }
+      .forget-pass {
+        font-family: Inter, sans-serif;
+        font-size: 12px;
+        font-style: normal;
+        line-height: 24px;
+      }
+      .forget-pass:visited {
+        color: #3b82f6;
+      }
+    }
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      .login-btn {
+        padding: 12px 40px;
+        margin-top: 24px;
       }
     }
   }
+  .registration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 24px;
+
+    &__title {
+      font-family: Inter, sans-serif;
+      font-size: 20px;
+      font-style: normal;
+      line-height: 32px;
+      color: #1e293b;
+    }
+    &__link {
+      margin-top: 8px;
+      font-family: Inter, sans-serif;
+      font-size: 20px;
+      font-style: normal;
+      line-height: 24px;
+      color: #3b82f6;
+    }
+  }
+}
