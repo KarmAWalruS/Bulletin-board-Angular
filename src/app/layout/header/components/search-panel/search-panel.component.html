@@ -4,7 +4,7 @@
       <h1 class="header-title">
         <a href="/">Доска объявлений</a>
       </h1>
-      <button class="category-btn">
+      <button class="category-btn" (click)="openCategory()">
         <svg
           width="20"
           height="20"
@@ -25,10 +25,11 @@
       <input
         type="text"
         class="search-input"
+        [(ngModel)]="search"
         placeholder="Поиск по объявлениям"
       />
 
-      <button class="search-btn btn">
+      <button class="search-btn btn" (click)="SearchAd()">
         Найти
         <svg
           width="16"

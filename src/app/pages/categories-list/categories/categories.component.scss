@@ -1,0 +1,23 @@
+.category-container {
+  display: grid;
+  grid-template-columns: 282px 1fr;
+  max-width: 1290px;
+
+  .left-wrap {
+    display: flex;
+    flex-direction: column;
+    max-width: 282px;
+
+    .category {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-top: 24px;
+      font-family: Inter, sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      line-height: 24px;
+    }
+  }
+}

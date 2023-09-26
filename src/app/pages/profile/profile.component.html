@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="profile-wrap">
+    <div class="settings">
+      <h1 class="settings__title">Настройки</h1>
+      <form class="settings-form">
+        <div class="input-name">
+          <p class="input-text">Имя</p>
+          <input type="text" />
+        </div>
+        <div class="input-phone">
+          <p class="input-text">Номер телефона</p>
+          <input
+            type="text"
+            mask="+7 (000) 000 00 00"
+            placeholder="+7 (000) 000 00 00"
+          />
+        </div>
+        <div class="input-flex">
+          <div class="input-adress">
+            <p class="input-text">
+              Адрес <span>(будет указываться в объявлениях по умолчанию)</span>
+            </p>
+            <input class="adress" type="text" placeholder="Не указано" />
+          </div>
+          <button class="change-settings btn">Сохранить</button>
+        </div>
+      </form>
+    </div>
+    <div class="change-password">
+      <h1 class="change-password__title">Смена пароля</h1>
+      <form class="changePassword-form">
+        <div class="current-password">
+          <p class="input-text">Текущий пароль</p>
+          <input
+            type="text"
+            name=""
+            id=""
+            placeholder="Введите текущий пароль"
+          />
+        </div>
+        <div class="new-password">
+          <p class="input-text">
+            Новый пароль <span>(минимум 8 символов)</span>
+          </p>
+          <input type="text" placeholder="Введите новый пароль" />
+        </div>
+        <button class="btn change-pass">Изменить пароль</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BulletinBoardComponent } from './bulletin-board/bulletin-board.component';
 
 const routes: Routes = [
   {
@@ -12,23 +11,23 @@ const routes: Routes = [
     path: 'bulletinBoard',
     title: 'Доска объявлений',
     loadChildren: () =>
-      import('./bulletin-board/bulletin-board.module').then(
+      import('./pages/bulletin-board/bulletin-board.module').then(
         (m) => m.BulletinBoardModule
       ),
   },
   {
-    path: 'advertisement/new-card',
+    path: 'new-card',
     title: 'Новое объявление',
     loadChildren: () =>
-      import(
-        './advertisement/new-or-change-card/new-or-change-card.module'
-      ).then((m) => m.NewOrChangeCardModule),
+      import('./pages/new-or-change-card/new-or-change-card.module').then(
+        (m) => m.NewOrChangeCardModule
+      ),
   },
   {
     path: 'logIn',
     title: 'Авторизация',
     loadChildren: () =>
-      import('./authorisation/authorisation.module').then(
+      import('./pages/authorisation/authorisation.module').then(
         (m) => m.AuthorisationModule
       ),
   },
@@ -36,9 +35,23 @@ const routes: Routes = [
     path: 'registration',
     title: 'Регистрация',
     loadChildren: () =>
-      import('./registration/registration.module').then(
+      import('./pages/registration/registration.module').then(
         (m) => m.RegistrationModule
       ),
+  },
+  {
+    path: 'categories',
+    title: 'Категории',
+    loadChildren: () =>
+      import('./pages/categories-list/categories-list.module').then(
+        (m) => m.CategoriesListModule
+      ),
+  },
+  {
+    path: 'settings',
+    title: 'Настройки профиля',
+    loadChildren: () =>
+      import('./pages/profile/profile.module').then((m) => m.ProfileModule),
   },
 ];
 
