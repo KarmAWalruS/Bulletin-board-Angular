@@ -26,12 +26,21 @@
   .registration-main {
     display: grid;
     margin-top: 24px;
+
+    .error {
+      margin-top: 5px;
+    }
+
     .phone-number {
       width: 344px;
       padding: 12px;
       border-radius: 4px;
       border: 1px solid #cbd5e1;
     }
+    .phone-number.input-error {
+      border: 2px solid #ff0000;
+    }
+
     .name {
       margin-top: 16px;
       width: 344px;
@@ -44,6 +53,9 @@
       padding: 12px;
       border-radius: 4px;
       border: 1px solid #cbd5e1;
+    }
+    .password.input-error {
+      border: 2px solid #ff0000;
     }
     .btn-container {
       display: flex;

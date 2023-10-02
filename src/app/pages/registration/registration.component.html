@@ -14,27 +14,85 @@
       />
     </svg>
   </div>
-  <form #f="ngForm" (ngSubmit)="onCreate(f)" class="registration-main">
+  <form [formGroup]="registrationForm" class="registration-main">
     <input
       type="text"
       name="login"
       class="phone-number"
-      ngModel
+      formControlName="login"
       placeholder="Номер телефона"
-      minlength="4"
+      [class]="{
+        'input-error':
+          registrationForm.get('login')?.invalid &&
+          (registrationForm.get('login')?.dirty ||
+            registrationForm.get('login')?.touched)
+      }"
     />
-    <input type="text" name="name" ngModel class="name" placeholder="Имя" />
+    <div>
+      <div
+        class="error"
+        *ngIf="
+          registrationForm.controls['login'].invalid &&
+          (registrationForm.controls['login'].touched ||
+            registrationForm.controls['login'].dirty)
+        "
+      >
+        <span *ngIf="registrationForm.controls['login'].errors?.['required']"
+          >Заполните поле</span
+        >
+      </div>
+      <div
+        class="error"
+        *ngIf="registrationForm.controls['login'].errors?.['minlength']"
+      >
+        Значение поля не может быть короче 8 символов.
+      </div>
+    </div>
+    <input
+      type="text"
+      name="name"
+      formControlName="name"
+      class="name"
+      placeholder="Имя"
+    />
     <input
       type="text"
       name="password"
       id="password"
-      ngModel
+      formControlName="password"
       class="password"
       placeholder="Пароль"
-      minlength="4"
+      [class]="{
+        'input-error':
+          registrationForm.get('password')?.invalid &&
+          (registrationForm.get('password')?.dirty ||
+            registrationForm.get('password')?.touched)
+      }"
     />
+    <div>
+      <div
+        class="error"
+        *ngIf="
+          registrationForm.controls['password'].invalid &&
+          (registrationForm.controls['password'].touched ||
+            registrationForm.controls['password'].dirty)
+        "
+      >
+        <span *ngIf="registrationForm.controls['password'].errors?.['required']"
+          >Заполните поле</span
+        >
+      </div>
+      <div
+        class="error"
+        *ngIf="registrationForm.controls['password'].errors?.['minlength']"
+      >
+        Значение поля не может быть короче 4 символов.
+      </div>
+    </div>
     <div class="btn-container">
-      <button class="btn login-btn">Зарегистрироваться</button>
+      <button class="btn login-btn" (click)="onCreate()">
+        Зарегистрироваться
+      </button>
     </div>
   </form>
   <!-- <div class="alert" *ngIf="f.errors?.['minlength']">

@@ -1,1 +1,66 @@
-<app-login></app-login>
+<div class="authorisation-form">
+  <div class="authorisation-header">
+    <p>Авторизация</p>
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M13.0601 12L17.4801 7.58C17.5538 7.51134 17.6129 7.42854 17.6539 7.33654C17.6949 7.24454 17.7169 7.14523 17.7187 7.04452C17.7205 6.94382 17.702 6.84379 17.6642 6.7504C17.6265 6.65701 17.5704 6.57218 17.4992 6.50096C17.4279 6.42974 17.3431 6.3736 17.2497 6.33588C17.1563 6.29816 17.0563 6.27963 16.9556 6.28141C16.8549 6.28319 16.7556 6.30523 16.6636 6.34622C16.5716 6.38721 16.4888 6.44631 16.4201 6.52L12.0001 10.94L7.58012 6.52C7.43795 6.38752 7.2499 6.3154 7.0556 6.31883C6.8613 6.32225 6.67591 6.40097 6.5385 6.53838C6.40109 6.67579 6.32237 6.86118 6.31895 7.05548C6.31552 7.24978 6.38764 7.43783 6.52012 7.58L10.9401 12L6.52012 16.42C6.37967 16.5606 6.30078 16.7513 6.30078 16.95C6.30078 17.1488 6.37967 17.3394 6.52012 17.48C6.66075 17.6205 6.85137 17.6993 7.05012 17.6993C7.24887 17.6993 7.4395 17.6205 7.58012 17.48L12.0001 13.06L16.4201 17.48C16.5607 17.6205 16.7514 17.6993 16.9501 17.6993C17.1489 17.6993 17.3395 17.6205 17.4801 17.48C17.6206 17.3394 17.6995 17.1488 17.6995 16.95C17.6995 16.7513 17.6206 16.5606 17.4801 16.42L13.0601 12Z"
+        fill="#1E293B"
+      />
+    </svg>
+  </div>
+  <form [formGroup]="authorisationForm" class="authorisation-main">
+    <input
+      type="text"
+      name="login"
+      id="login"
+      formControlName="login"
+      class="phone-number"
+      placeholder="Номер телефона"
+      [class]="{
+        'input-error':
+          authorisationForm.get('login')?.invalid &&
+          (authorisationForm.get('login')?.dirty ||
+            authorisationForm.get('login')?.touched)
+      }"
+    />
+    <input
+      type="text"
+      name="password"
+      id="password"
+      formControlName="password"
+      class="password"
+      placeholder="Пароль"
+      [class]="{
+        'input-error':
+          authorisationForm.get('password')?.invalid &&
+          (authorisationForm.get('password')?.dirty ||
+            authorisationForm.get('password')?.touched)
+      }"
+    />
+    <div class="auth-remember">
+      <div class="rememberMe">
+        <input type="checkbox" name="rememberMe" id="rememberMe" />
+        <label for="rememberMe" class="rememberMe-text">Запомнить меня</label>
+      </div>
+      <a href="#" class="forget-pass">Забыли пароль?</a>
+    </div>
+    <div class="btn-container">
+      <button class="btn login-btn" (click)="logIn()">Войти</button>
+    </div>
+    <div>
+      <div class="error" *ngIf="badRequest">Не верный логин или пароль</div>
+    </div>
+  </form>
+  <div class="registration">
+    <p class="registration__title">Нет аккаунта?</p>
+    <a class="registration__link" routerLink="../registration"
+      >Зарегистрироваться</a
+    >
+  </div>
+</div>
