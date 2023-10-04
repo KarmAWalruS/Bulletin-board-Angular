@@ -1,19 +1,19 @@
 <a routerLink="/advertisement">
   <div class="cards-section__container">
     <div class="card-image">
-      <img [src]="bulletin.image" alt="" />
+      <img [src]="bulletin.imagesIds" alt="" />
     </div>
     <div class="card-title">
-      <h3>{{ bulletin.title }}</h3>
+      <h3>{{ bulletin.name }}</h3>
     </div>
     <div class="card-price">
-      <h3>{{ bulletin.price }}</h3>
+      <h3>{{ bulletin.cost }}</h3>
     </div>
     <div class="card-adress">
-      <p>{{ bulletin.description }}</p>
+      <p>{{ bulletin.location }}</p>
     </div>
     <div class="card-date">
-      <p>{{ bulletin.rating.rate }}</p>
+      <p>{{ bulletin.createdAt }}</p>
     </div>
   </div>
 </a>

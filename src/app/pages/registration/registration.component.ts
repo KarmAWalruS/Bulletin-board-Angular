@@ -30,7 +30,7 @@ export class RegistrationComponent {
     });
   }
 
-  onCreate(): void {
+  onCreate() {
     this.httpClient
       .post('http://194.87.237.48:5000/Auth/Register', {
         name: this.registrationForm.get('name')?.value,

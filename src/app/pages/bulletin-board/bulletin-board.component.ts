@@ -13,8 +13,6 @@ export class BulletinBoardComponent {
   constructor(private _bulletinService: BulletinsService) {}
 
   ngOnInit() {
-    this._bulletinService.getBulletins().subscribe((resp) => {
-      this.bulletins = resp;
-    });
+    this._bulletinService.getBulletins();
   }
 }

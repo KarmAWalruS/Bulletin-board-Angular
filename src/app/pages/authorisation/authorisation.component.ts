@@ -1,6 +1,7 @@
 import { NgFor } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { AuthorisationService } from '../../services/authorisation.service';
 import {
   FormBuilder,
   NgForm,
@@ -19,7 +20,11 @@ export class AuthorisationComponent {
   authorisationForm: UntypedFormGroup = new UntypedFormGroup({});
   modalServiceService: any;
 
-  constructor(private fb: FormBuilder, _http: HttpClient) {
+  constructor(
+    private fb: FormBuilder,
+    _http: HttpClient,
+    public authorisationService: AuthorisationService
+  ) {
     this.httpClient = _http;
     this._buildForm();
   }
@@ -34,8 +39,13 @@ export class AuthorisationComponent {
     });
   }
 
-  logIn(): void {
-    this.httpClient
+  logIn() {
+    if (this.authorisationForm.valid) {
+      const username = this.authorisationForm.get('login')?.value;
+      const password = this.authorisationForm.get('password')?.value;
+      this.authorisationService.login(username, password);
+    }
+    /* this.httpClient
       .post('http://194.87.237.48:5000/Auth/Login', {
         login: this.authorisationForm.get('login')?.value,
         password: this.authorisationForm.get('password')?.value,
@@ -53,6 +63,6 @@ export class AuthorisationComponent {
             this.badRequest = true;
           }
         }
-      );
+      ); */
   }
 }

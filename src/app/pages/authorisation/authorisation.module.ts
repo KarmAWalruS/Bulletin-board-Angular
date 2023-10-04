@@ -4,6 +4,7 @@ import { AuthorisationComponent } from './authorisation.component';
 
 import { AuthorisationRoutingModule } from './authorisation.routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthorisationService } from '../../services/authorisation.service';
 
 @NgModule({
   declarations: [AuthorisationComponent],

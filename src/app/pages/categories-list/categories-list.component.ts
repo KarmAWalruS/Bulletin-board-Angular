@@ -19,6 +19,7 @@ export class CategoriesListComponent implements OnInit {
       .get<Categories[]>('http://194.87.237.48:5000/Categories')
       .subscribe((categoriesList) => {
         this.categoriesList = categoriesList;
+        console.log(categoriesList);
       });
   }
 }

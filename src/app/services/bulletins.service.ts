@@ -7,8 +7,15 @@ import { Root } from '../shared/main-board/main-board.interface';
   providedIn: 'root',
 })
 export class BulletinsService {
-  constructor(private _http: HttpClient) {}
-  getBulletins(): Observable<Root> {
-    return this._http.get<Root>('https://fakestoreapi.com/products');
+  private httpClient: HttpClient;
+  constructor(private _http: HttpClient) {
+    this.httpClient = _http;
+  }
+  getBulletins(): void {
+    this.httpClient
+      .post('http://194.87.237.48:5000/Advert/search', {})
+      .subscribe((data) => {
+        console.log(data);
+      });
   }
 }
