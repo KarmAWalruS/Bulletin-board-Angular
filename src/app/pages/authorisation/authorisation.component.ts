@@ -44,6 +44,8 @@ export class AuthorisationComponent {
       const username = this.authorisationForm.get('login')?.value;
       const password = this.authorisationForm.get('password')?.value;
       this.authorisationService.login(username, password);
+      console.log(this.isAuthenticated);
+      console.log(this.isUserLoggedIn);
     }
     /* this.httpClient
       .post('http://194.87.237.48:5000/Auth/Login', {

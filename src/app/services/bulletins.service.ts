@@ -11,7 +11,7 @@ export class BulletinsService {
   constructor(private _http: HttpClient) {
     this.httpClient = _http;
   }
-  getBulletins(): void {
+  getBulletins() {
     this.httpClient
       .post('http://194.87.237.48:5000/Advert/search', {})
       .subscribe((data) => {

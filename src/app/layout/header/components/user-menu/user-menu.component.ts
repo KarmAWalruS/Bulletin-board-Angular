@@ -8,5 +8,8 @@ import { AuthorisationService } from '../../../../services/authorisation.service
   providers: [AuthorisationService],
 })
 export class UserMenuComponent {
-  constructor(authService: AuthorisationService) {}
+  private auth!: AuthorisationService;
+  constructor(authService: AuthorisationService) {
+    this.auth = authService;
+  }
 }

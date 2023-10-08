@@ -28,6 +28,8 @@ export class AuthorisationService {
           this.isAuthenticated = true;
           this.isUserLoggedIn = true;
           this.modalServiceService.openLoginForm = false;
+          console.log(this.isAuthenticated);
+          console.log(this.isUserLoggedIn);
 
           observer.complete();
         },

@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Categories } from './categories-list.interface';
+import { categoriesService } from '../../services/categories.service';
 
 @Component({
   selector: 'app-categories-list',
@@ -10,16 +11,13 @@ import { Categories } from './categories-list.interface';
 export class CategoriesListComponent implements OnInit {
   public categoriesList!: Categories[];
   private httpClient: HttpClient;
-  constructor(_http: HttpClient) {
+  constructor(public categoriesService: categoriesService, _http: HttpClient) {
     this.httpClient = _http;
   }
 
-  ngOnInit(): void {
-    this.httpClient
-      .get<Categories[]>('http://194.87.237.48:5000/Categories')
-      .subscribe((categoriesList) => {
-        this.categoriesList = categoriesList;
-        console.log(categoriesList);
-      });
+  ngOnInit() {
+    this.categoriesService.getCategories().subscribe((response) => {
+      this.categoriesList = response.childs;
+    });
   }
 }

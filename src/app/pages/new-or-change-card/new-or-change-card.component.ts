@@ -1,24 +1,31 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { categoriesService } from '../../services/categories.service';
 import {
   FormArray,
   FormBuilder,
   UntypedFormGroup,
   Validators,
 } from '@angular/forms';
+import { Categories } from '../categories-list/categories-list.interface';
 
 @Component({
   selector: 'app-new-or-change-card',
   templateUrl: './new-or-change-card.component.html',
   styleUrls: ['./new-or-change-card.component.scss'],
 })
-export class NewOrChangeCardComponent {
+export class NewOrChangeCardComponent implements OnInit {
   advertisementForm: UntypedFormGroup = new UntypedFormGroup({});
+  public categoriesList!: Categories[];
 
   private httpClient: HttpClient;
   imageSrc: string = '';
 
-  constructor(private fb: FormBuilder, _http: HttpClient) {
+  constructor(
+    private fb: FormBuilder,
+    public categoriesService: categoriesService,
+    _http: HttpClient
+  ) {
     this.httpClient = _http;
     this._buildForm();
   }
@@ -82,5 +89,11 @@ export class NewOrChangeCardComponent {
       .subscribe((data) => {
         console.log(data);
       });
+  }
+
+  ngOnInit(): void {
+    this.categoriesService.getCategories().subscribe((response) => {
+      this.categoriesList = response.childs;
+    });
   }
 }

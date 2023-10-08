@@ -11,10 +11,10 @@
             id="category"
             class="categoryInput"
           >
-            <option value="s1">Нажмите, чтобы выбрать</option>
-            <option value="s2">Техника</option>
-            <option value="s3">Животные</option>
-            <option value="s3">Книги</option>
+            <option [ngValue]="null">Нажмите, чтобы выбрать</option>
+            <option *ngFor="let c of categoriesList" [ngValue]="c.id">
+              {{ c.name }}
+            </option>
           </select>
         </p>
       </div>
